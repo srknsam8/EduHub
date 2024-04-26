@@ -30,4 +30,6 @@ router.get('/', async (req, res) => {
   }
 });
 
+// quiz response api
+
 export default router;
