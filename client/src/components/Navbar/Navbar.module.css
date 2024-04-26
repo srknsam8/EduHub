@@ -1,0 +1,22 @@
+.navbarMainContainer{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+.navItemsList{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 0.8rem;
+    margin-left: 5rem;
+}
+
+.lineBreak{
+    border: 2px solid white;
+    padding: 0px;
+}

@@ -30,6 +30,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    const quizRes = await Quiz.findById(id);
+    if (!quizRes) {
+      return res.json({ msg: 'Quiz not found' });
+    }
+    res.json(quizRes);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // quiz response api
 
 export default router;
