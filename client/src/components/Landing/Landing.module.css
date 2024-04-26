@@ -1,0 +1,79 @@
+.firstCardContainer {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.firstTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  gap: 2rem;
+  margin-left: 2rem;
+  padding: 0.8rem;
+}
+
+.btnContainer {
+  background-color: black;
+  color: white;
+  width: 15%;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  align-items: flex-end;
+}
+
+.firstImageContainer {
+  width: 40%;
+  flex-basis: 50%;
+}
+
+.assesment2Image {
+  width: 15%;
+}
+.firstMiddleText {
+  width: 80%;
+  font-size: 1.3rem;
+}
+
+.secondCardContainer {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  background-color: #BDFFE0;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondSideImage1 {
+  width: 10%;
+}
+
+.secondSideImage2 {
+  width: 20%;
+  flex-basis: 50%;
+}
+
+.secondCardInnerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;   
+  padding: 2rem;
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btnContainer2 {
+  background-color: black;
+  color: white;
+  width: 25%;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  align-items: flex-end;
+  margin-top: 0.5rem;
+}

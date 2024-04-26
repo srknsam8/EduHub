@@ -1,0 +1,27 @@
+.upperContainer{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 90%;
+}
+
+.upperInnerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.upperSideContainer{
+    background-color: green;
+    border-radius: 50%;
+    color: white;
+    padding: 1rem;
+}
+
+.quizMainContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 3em;
+}
