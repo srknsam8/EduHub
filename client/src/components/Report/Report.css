@@ -1,0 +1,21 @@
+.report-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .chart-container {
+    width: 50%;
+    margin-right: 20px;
+  }
+  
+  .recommendations-container {
+    width: 50%;
+  }
+  
+  .recommendations-container div {
+    margin-bottom: 20px;
+  }
+  
+  /* Customize the chart and recommendations styling as needed */
+  
