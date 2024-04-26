@@ -28,8 +28,9 @@ const tagToCourseMapping = {
   ENT: 'Mastering ENT',
 };
 
-router.get('/report', async (req, res) => {
+router.post('/report', async (req, res) => {
   const { userId, quizId } = req.body;
+  console.log(userId, quizId)
   const quiz = await Quiz.findById(quizId);
   if (!quiz || !quiz.questions) {
     return res

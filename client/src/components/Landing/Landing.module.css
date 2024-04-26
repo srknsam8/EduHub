@@ -24,6 +24,7 @@
   border-radius: 0.5rem;
   font-size: 1.2rem;
   align-items: flex-end;
+  cursor: pointer;
 }
 
 .firstImageContainer {
@@ -77,6 +78,7 @@
   align-items: flex-end;
   margin-top: 0.5rem;
   align-self: flex-start;
+  cursor: pointer;
 }
 
 
