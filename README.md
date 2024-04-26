@@ -8,7 +8,6 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
 * Presence of an on-screen AI assistant to clear doubts instantly.
 * Performance analysis of tests.
 * Course recommendation according to performance in tests.
-* Ability to book sessions with our in-house career counsellor.
 
 ## Architecture :hammer_and_wrench:
 
@@ -28,11 +27,12 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
 * Multi-lingual support for a more diverse user base.
 * Chatroom for students preparing for the same test to promote peer-learning.
 * Providing discounts on courses based on previous test performances.
+* Ability to book sessions with our in-house career counsellor
 
 ## FAQs :question:
 <details open>
   <summary>What is EduHub?</summary><br>
-  <blockquote>Eduhub is a comprehensive web application designed to revolutionize the educational experience. Offering a one-stop solution, Eduhub provides 3D models for immersive learning, an on-screen AI assistant for instant doubt resolution, and detailed performance analysis of tests. It goes beyond by recommending courses based on individual test performance and even allows users to book sessions with our expert career counsellors, making it a holistic platform for all your educational needs.</blockquote>
+  <blockquote>Eduhub is a comprehensive web application designed to revolutionize the educational experience. Offering a one-stop solution, Eduhub provides 3D models for immersive learning, an on-screen AI assistant for instant doubt resolution, and detailed performance analysis of tests. It goes beyond by recommending courses based on individual test performance making it a holistic platform for all your educational needs.</blockquote>
 </details>
 <details open>
   <summary>What is our vision and mission?</summary><br>
@@ -43,11 +43,11 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
   <blockquote>With the current advancements in technology, we have a lot of revolutionary tools at our disposal. EduHub leverages these tools to provide its users with interactive study material, comprehensive test analysis and AI doubt assistance.</blockquote>
 </details>
 <details open>
-  <summary>How does this project bridge the gap between traditional education and the needs of tomorrow's workforce?</summary><br>
-  <blockquote>Education has become of paramount importance in today's society. It is what liberates us and help us advance as a race. This project will help us provide quality education to people in remote areas who suffer due to lack of access to good resources</blockquote>
+  <summary>How does the on-screen AI assistant work, and what types of questions can it help with?</summary><br>
+  <blockquote>Our on-screen AI assistant (K.A.I) raises the bar for doubt-resolution. Whenever you have a doubt regarding the course material, you can instantly proceed to resolve it with the help of K.A.I. It is equipped to handle any and all of your doubts with ease. </blockquote>
 </details>
 <details open>
   <summary>How does this project bridge the gap between traditional education and the needs of tomorrow's workforce?</summary><br>
-  <blockquote>Education has become of paramount importance in today's society. It is what liberates us and help us advance as a race. This project will help us provide quality education to people in remote areas who suffer due to lack of access to good resources</blockquote>
+  <blockquote>In the current demographic where people are easily bored and seek engaging and interactive experiences, platforms like EduHub play a crucial role by offering innovative solutions that capture and sustain users' interest. While, traditional education takes help of 2d diagrams to explain concepts, the existence of 3d models provides a much deeper understanding of the same concepts. Essentially, EduHub aims to remove the shackles of traditional education, which existed due to past limitations.</blockquote>
 </details>
 
