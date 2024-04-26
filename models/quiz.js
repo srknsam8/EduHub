@@ -17,6 +17,7 @@ const questionsSchema = mongoose.Schema({
   correctAnswer: {
     type: Number,
   },
+  tags: [{ type: String }]
 });
 
 const quizModel = mongoose.Schema({

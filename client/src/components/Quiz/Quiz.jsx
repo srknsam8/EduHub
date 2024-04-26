@@ -1,8 +1,23 @@
 import { useParams } from 'react-router-dom';
 import styles from './Quiz.module.css';
+import axios from 'axios'
+import { useEffect, useState } from 'react';
+
 function Quiz() {
   const { id } = useParams();
   console.log(id);
+
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/api/v1/quiz/${id}`)
+    .then(res => {
+        setData(res.data)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+  }, [id])
+  console.log(data)
   return (
     <div className={styles.quizMainContainer}>
       <div className={styles.upperContainer}>
