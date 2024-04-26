@@ -10,12 +10,23 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
 * Course recommendation according to performance in tests.
 
 ## Architecture :hammer_and_wrench:
-![Alt Text](Architecture.PNG)
+![Architecture](Architecture.PNG)
 
 ##  Flow Diagram:
-![Alt Text](FlowDiagram.jpg)
+![Flow Diagram](FlowDiagram.jpg)
 
-## UI Snapshots :computer:
+## UI Mockups :computer:
+### Home Page :
+![Home](Mockups/1.png)<br><br>
+
+### Assessment Page :
+![Assessment](Mockups/2.png)<br><br>
+
+### Performance Analysis :
+![Result](Mockups/3.png)<br><br>
+
+### Course Page :
+![Course](Mockups/4.png)<br><br>
 
 ## 3D Objects used :
 * <a href="https://sketchfab.com/models/24ec03412dd8432bb0d3e750a72608e0/embed">Sections of Brain</a>
