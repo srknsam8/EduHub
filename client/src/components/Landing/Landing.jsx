@@ -8,7 +8,6 @@ import course from '../../assets/course.png';
 import Navbar from '../Navbar/Navbar';
 import styles from './Landing.module.css';
 
-
 function Landing() {
   return (
     <div>
