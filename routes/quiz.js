@@ -18,4 +18,16 @@ router.post('/createquiz', async (req, res) => {
   res.json({ msg: 'quiz created successfully' });
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const quiz = await Quiz.find();
+    if (!quiz) {
+      return res.json({ msg: 'No quizes available' });
+    }
+    res.json(quiz);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 export default router;
