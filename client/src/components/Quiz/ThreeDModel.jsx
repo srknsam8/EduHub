@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -14,7 +14,7 @@ function GLTFRenderer() {
       75,
       container.clientWidth / container.clientHeight,
       0.1,
-      1000
+      1000,
     );
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     const loader = new GLTFLoader();
@@ -37,15 +37,14 @@ function GLTFRenderer() {
     scene.add(hemisphereLight);
 
     let model;
-    loader.load('src/public/scene.gltf', (gltf) => {
+    loader.load('../../public/scene.gltf', (gltf) => {
       model = gltf.scene;
       model.scale.set(0.1, 0.1, 0.1);
 
       model.traverse((child) => {
         if (child.isMesh) {
           const { material } = child;
-          const texturePath =
-            'src/public/textures/thairoid01lungh_part02_baseColor.jpeg';
+          const texturePath = '../../public/textures/thairoid01lungh_part02_baseColor.jpeg';
           const texture = new THREE.TextureLoader().load(texturePath);
           material.map = texture;
 
