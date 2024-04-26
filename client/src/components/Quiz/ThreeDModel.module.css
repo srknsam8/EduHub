@@ -1,0 +1,9 @@
+.ThreeDcanvas {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 110rem;
+    top: 49rem;
+    touch-action: none;
+  }
+  

@@ -4,8 +4,10 @@ import assesment from '../../assets/assesment.png';
 import assesment2 from '../../assets/assesment2.png';
 import careermapper from '../../assets/careermapper.png';
 import careermapper2 from '../../assets/careermapper2.png';
+import course from '../../assets/course.png';
 import Navbar from '../Navbar/Navbar';
 import styles from './Landing.module.css';
+
 
 function Landing() {
   return (
@@ -50,6 +52,19 @@ function Landing() {
           <button className={styles.btnContainer2}>View More</button>
         </div>
         <img className={styles.secondSideImage2} src={careermapper} />
+      </div>
+      <div className={styles.thirdContainer}>
+        <img src={course} className={styles.thirdContainerImage} />
+        <div className={styles.thirdContinerLeft}>
+          <div style={{fontSize:"2rem"}}>Courses</div>
+          <div style={{fontSize:"1.4rem", width:"80%"}}>
+            Discover your perfect course match. Dive into subjects that intrigue
+            you, from programming to psychology. Start learning today!
+          </div>
+          <button className={styles.btnContainer3}>View more</button>
+        </div>
+      </div>
+      <div>
       </div>
     </div>
   );
