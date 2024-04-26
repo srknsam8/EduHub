@@ -1,5 +1,6 @@
 // import styles from './Landing.module.css'
 
+import { useNavigate } from 'react-router-dom';
 import assesment from '../../assets/assesment.png';
 import assesment2 from '../../assets/assesment2.png';
 import careermapper from '../../assets/careermapper.png';
@@ -9,6 +10,7 @@ import Navbar from '../Navbar/Navbar';
 import styles from './Landing.module.css';
 
 function Landing() {
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -17,14 +19,21 @@ function Landing() {
         <div className={styles.firstTextContainer}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img className={styles.assesment2Image} src={assesment2} />
-            <div style={{ fontSize: '1.4rem' }}>Assesment</div>
+            <div
+              
+              style={{ fontSize: '1.4rem' }}
+            >
+              Assesment
+            </div>
           </div>
           <div className={styles.firstMiddleText}>
             A fast evaluation to test your understanding across subjects.
             Schedule according to your covinience & complete in minutes. Good
             luck!
           </div>
-          <button className={styles.btnContainer}>View more</button>
+          <button onClick={() => {
+                navigate('/quiz');
+              }} className={styles.btnContainer}>View more</button>
         </div>
       </div>
       <div className={styles.secondCardContainer}>
@@ -55,16 +64,15 @@ function Landing() {
       <div className={styles.thirdContainer}>
         <img src={course} className={styles.thirdContainerImage} />
         <div className={styles.thirdContinerLeft}>
-          <div style={{fontSize:"2rem"}}>Courses</div>
-          <div style={{fontSize:"1.4rem", width:"80%"}}>
+          <div style={{ fontSize: '2rem' }}>Courses</div>
+          <div style={{ fontSize: '1.4rem', width: '80%' }}>
             Discover your perfect course match. Dive into subjects that intrigue
             you, from programming to psychology. Start learning today!
           </div>
           <button className={styles.btnContainer3}>View more</button>
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
     </div>
   );
 }
