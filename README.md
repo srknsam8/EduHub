@@ -10,6 +10,10 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
 * Course recommendation according to performance in tests.
 
 ## Architecture :hammer_and_wrench:
+![Alt Text](Architecture.PNG)
+
+##  Flow Diagram:
+![Alt Text](FlowDiagram.jpg)
 
 ## UI Snapshots :computer:
 
