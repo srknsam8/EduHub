@@ -1,13 +1,16 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Model from '../Model/Model';
 import styles from './Quiz.module.css';
+import NavBar from '../Navbar/Navbar'
 
 function Quiz() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [quizData, setQuizData] = useState(null);
   const [userResponses, setUserResponses] = useState({});
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   useEffect(() => {
     axios
@@ -25,6 +28,16 @@ function Quiz() {
       ...prevState,
       [questionIndex]: optionIndex,
     }));
+  };
+
+  const handleNextQuestion = () => {
+    setCurrentQuestionIndex((prevIndex) =>
+      Math.min(prevIndex + 1, quizData.questions.length - 1)
+    );
+  };
+
+  const handlePreviousQuestion = () => {
+    setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
   const handleSubmit = () => {
@@ -58,13 +71,14 @@ function Quiz() {
         // Handle error
       });
   };
-
   return (
+    <>
+    <NavBar />
     <div className={styles.quizMainContainer}>
       {/* Render quiz details */}
       {quizData && (
         <div className={styles.upperContainer}>
-          <div>{quizData.created_by}</div>
+          <div>Shrikant Sharma</div>
           <div className={styles.upperInnerContainer}>
             <div>
               <div>EXAM</div>
@@ -82,39 +96,74 @@ function Quiz() {
         </div>
       )}
 
-      {/* Render quiz questions and options */}
-      {quizData && (
+      {/* Conditional rendering of current question */}
+      {quizData && quizData.questions && quizData.questions.length > 0 && (
         <div className={styles.mainContainer}>
-          {quizData.questions.map((question, questionIndex) => (
-            <div key={question._id} className={styles.questionContainer}>
-              <div className={styles.questionText}>{question.questionText}</div>
-              <div className={styles.optionsContainer}>
-                {question.options.map((option, optionIndex) => (
-                  <div key={option._id} className={styles.option}>
-                    <input
-                      type="radio"
-                      id={option._id}
-                      name={`question-${question.questionNumber}`}
-                      value={optionIndex}
-                      onChange={() =>
-                        handleResponseChange(questionIndex, optionIndex)
-                      }
-                      checked={userResponses[questionIndex] === optionIndex}
-                    />
-                    <label htmlFor={option._id}>{option.optionText}</label>
-                  </div>
-                ))}
-              </div>
+          <div className={styles.questionContainer}>
+            <div className={styles.questionText}>
+              {quizData.questions[currentQuestionIndex].questionText}
             </div>
-          ))}
+            <div className={styles.optionsContainerWrapper}>
+              <div className={styles.optionsContainer}>
+                {quizData.questions[currentQuestionIndex].options.map(
+                  (option, optionIndex) => (
+                    <div key={option._id} className={styles.option}>
+                      <input
+                        type="radio"
+                        id={option._id}
+                        name={`question-${quizData.questions[currentQuestionIndex].questionNumber}`}
+                        value={optionIndex}
+                        onChange={() =>
+                          handleResponseChange(
+                            currentQuestionIndex,
+                            optionIndex
+                          )
+                        }
+                        checked={
+                          userResponses[currentQuestionIndex] === optionIndex
+                        }
+                      />
+                      <label htmlFor={option._id}>{option.optionText}</label>
+                    </div>
+                  )
+                )}
+              </div>
+              {quizData.questions[currentQuestionIndex].questionNumber ===
+                1 && (
+                <div className={styles.threeDmodelContainer}>
+                  <Model />
+                </div>
+              )}
+            </div>
+          </div>
+          {/* Navigation buttons */}
+          <div className={styles.navigationButtons}>
+            <button
+              className={styles.buttonContainer}
+              onClick={handlePreviousQuestion}
+              disabled={currentQuestionIndex === 0}
+            >
+              Previous
+            </button>
+            <button
+              className={styles.buttonContainer}
+              onClick={handleNextQuestion}
+              disabled={currentQuestionIndex === quizData.questions.length - 1}
+            >
+              Next
+            </button>
+          </div>
         </div>
       )}
-
+      <br />
       {/* Render submit button */}
-      <div className={styles.submitButton} onClick={handleSubmit}>
-        Submit
+      <div className={styles.buttonWrapperContainer}>
+        <button className={styles.submitButton} onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </div>
+    </>
   );
 }
 
