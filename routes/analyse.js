@@ -23,18 +23,31 @@ router.post('/sendresponse', userMiddleWare, async (req, res) => {
   res.json({ msg: 'responses saved successfully' });
 });
 
-router.get('/report', userMiddleWare, async (req, res) => {
+const tagToCourseMapping = {
+  neurology: 'Medical Neuroscience',
+  ENT: 'Mastering ENT',
+};
+
+router.get('/report', async (req, res) => {
   const { userId, quizId } = req.body;
   const quiz = await Quiz.findById(quizId);
+  if (!quiz || !quiz.questions) {
+    return res
+      .status(404)
+      .json({ error: 'Quiz not found or questions not populated' });
+  }
   const userResponse = await Response.find({ userId: userId, quizId: quizId });
-  
+  if (!userResponse) {
+    return res.status(404).json({ error: 'User response not found' });
+  }
+
   // Initialize section-wise scores and recommendation messages
   const sectionWiseScores = {};
   const recommendations = {};
 
   // Iterate over each question to initialize section-wise scores
-  quiz.questions.forEach(question => {
-    question.tags.forEach(tag => {
+  quiz.questions.forEach((question) => {
+    question.tags.forEach((tag) => {
       if (!sectionWiseScores[tag]) {
         sectionWiseScores[tag] = { total: 0, correct: 0, percentage: 0 };
       }
@@ -42,10 +55,10 @@ router.get('/report', userMiddleWare, async (req, res) => {
   });
 
   // Calculate scores
-  userResponse.forEach(response => {
+  userResponse.forEach((response) => {
     response.responses.forEach((userAnswer, index) => {
       const question = quiz.questions[index];
-      question.tags.forEach(tag => {
+      question.tags.forEach((tag) => {
         sectionWiseScores[tag].total++;
         if (userAnswer.answerId === question.correctAnswer) {
           sectionWiseScores[tag].correct++;
@@ -55,25 +68,26 @@ router.get('/report', userMiddleWare, async (req, res) => {
   });
 
   // Calculate percentage for each section and check for recommendations
-  Object.keys(sectionWiseScores).forEach(tag => {
+  Object.keys(sectionWiseScores).forEach((tag) => {
     const score = sectionWiseScores[tag].correct;
     const total = sectionWiseScores[tag].total;
     const percentage = total === 0 ? 0 : (score * 100) / total;
     sectionWiseScores[tag].percentage = percentage; // Update percentage in section-wise scores
     if (percentage < 50) {
       const course = tagToCourseMapping[tag];
-      recommendations[tag] = `We recommend you to take ${course} as you scored less than 50% in ${tag} section.`;
+      recommendations[
+        tag
+      ] = `We recommend you to take ${course} as you scored less than 50% in ${tag} section.`;
     }
   });
 
   // Prepare response with section-wise scores and recommendations
   const responseToSend = {
     sectionScores: sectionWiseScores,
-    recommendations: recommendations
+    recommendations: recommendations,
   };
 
   res.json(responseToSend);
 });
-
 
 export default router;

@@ -76,4 +76,29 @@
   font-size: 1.2rem;
   align-items: flex-end;
   margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+
+.thirdContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.thirdContinerLeft{
+  padding: 2rem;
+  align-items: center;
+  align-content: center;
+  gap: 2rem;
+}
+
+.btnContainer3{
+  background-color: black;
+  color: white;
+  width: 28%;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  align-items: flex-end;
+  margin-top: 0.5rem;
 }

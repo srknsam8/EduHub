@@ -1,4 +1,5 @@
 import styles from './Navbar.module.css';
+import logo from '../../assets/eduhub.png'
 
 function Navbar() {
   const navItems = [
@@ -10,7 +11,11 @@ function Navbar() {
 
   return (
     <div className={styles.navbarMainContainer}>
-      <div>Logo</div>
+    <div style={{display:"flex", alignItems:"center"}} >
+
+      <img src={logo} />
+      <div style={{fontSize:"2.3rem", marginLeft:"0.3rem"}} >EduHub</div>
+    </div>
       <ul className={styles.navItemsList}>
         {navItems.map((item, index) => {
           return(
