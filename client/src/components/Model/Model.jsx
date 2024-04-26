@@ -13,7 +13,7 @@ function Model() {
           execution-while-not-rendered
           web-share
           src="https://sketchfab.com/models/24ec03412dd8432bb0d3e750a72608e0/embed"
-          style={{ width: '90%', height: '250px' }}
+          style={{ width: '100%', height: '250px' }}
         />
       </div>
 
