@@ -12,10 +12,10 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
 ## Architecture :hammer_and_wrench:
 ![Architecture](Architecture.PNG)
 
-##  Flow Diagram:
+##  Flow Diagram :
 ![Flow Diagram](FlowDiagram.jpg)
 
-## UI Mockups :computer:
+## UI : <a href="https://www.figma.com/file/LvdHxb0DWYGCAXh8mOjHBU/Hack2tech?type=design&node-id=0%3A1&mode=design&t=5jHjXyKDibt3PCR3-1">Click here for complete file</a>
 ### Home Page :
 ![Home](Mockups/1.png)<br><br>
 
