@@ -1,5 +1,3 @@
-
-
 function QuizListing() {
   return (
     <div>QuizListing</div>

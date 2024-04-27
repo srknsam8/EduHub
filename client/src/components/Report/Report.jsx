@@ -98,10 +98,6 @@ function Report() {
               <h3 style={{fontSize:"1.6rem"}}>Total Marks</h3>
               <p>20</p>
             </div>
-            <div className="card">
-              <h3 style={{fontSize:"1.6rem"}}>My Score</h3>
-              <p>6</p>
-            </div>
             {Object.entries(reportData.sectionScores).map(([sectionName, sectionData]) => (
               <div className="card" key={sectionName}>
                 <h3 style={{fontSize:"1.6rem"}} >{sectionName}</h3>

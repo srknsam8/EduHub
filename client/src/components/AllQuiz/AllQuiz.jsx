@@ -47,7 +47,7 @@ function AllQuiz() {
       <Navbar />
       <div className={styles.allQuizMainContainer}>
         <div className={styles.headerMainContainer}>
-          Select quiz according to your interest
+          Select test according to your interest
         </div>
         <div className={styles.middleContainer}>
           <input

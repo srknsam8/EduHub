@@ -16,6 +16,7 @@ function Course() {
   const handleApiResponse = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setPrompt('');
     try {
       const response = await axios.get(
         `http://localhost:3000/api/v1/solution?prompt=${encodeURIComponent(
@@ -38,7 +39,7 @@ function Course() {
       <Navbar />
       <div className={styles.courseMainContainer}>
         <div className={styles.coursenameContainer}>
-          <div className={styles.courseNameText}>Course name</div>
+          <div className={styles.courseNameText}>Nephrology</div>
           <div className={styles.courseChapterText}>Chapter 1</div>
         </div>
         <div className={styles.courseMiddleContainer}>
@@ -56,7 +57,7 @@ function Course() {
           </div>
         </div>
         <div className={styles.kaimainContainer}>
-        <div className={styles.kaiHeaderText} >KAI</div>
+          <div className={styles.kaiHeaderText}>KAI</div>
           <div className={styles.responseContainer}>
             {loading ? (
               <div className={styles.loader}></div>
