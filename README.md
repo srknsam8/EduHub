@@ -47,11 +47,11 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
 ## FAQs :question:
 <details open>
   <summary>What is EduHub?</summary><br>
-  <blockquote>Eduhub is a comprehensive web application designed to revolutionize the educational experience. Offering a one-stop solution, Eduhub provides 3D models for immersive learning, an on-screen AI assistant for instant doubt resolution, and detailed performance analysis of tests. It goes beyond by recommending courses based on individual test performance making it a holistic platform for all your educational needs.</blockquote>
+  <blockquote>Eduhub is a comprehensive web application designed to revolutionize the educational experience. Offering a one-stop solution, Eduhub provides 3D models for immersive learning, an on-screen AI assistant for instant doubt resolution, and detailed performance analysis of tests. It goes beyond, by recommending courses based on individual test performance, making it a holistic platform for all your educational needs.</blockquote>
 </details>
 <details open>
   <summary>What is our vision and mission?</summary><br>
-  <blockquote>Education is of paramount importance in today's society. It is what liberates us and help us advance as a race. This project will help us provide quality education to students of all demographics, irrespective of their location or availability of resources. It also aims to provide students with a much deeper and fundamental understanding of concepts with the help of detailed 3d models.</blockquote>
+  <blockquote>Education is of paramount importance in today's society. It is what liberates us and helps us advance as a race. This project will allow us provide quality education to students of all demographics, irrespective of their location or availability of resources. It also aims to provide students with a much deeper and fundamental understanding of concepts with the help of detailed 3d models.</blockquote>
 </details>
 <details open>
   <summary>Why should you choose EduHub over other online learning platforms?</summary><br>
