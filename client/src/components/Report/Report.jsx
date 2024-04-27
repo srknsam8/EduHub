@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { Chart } from 'chart.js/auto'; // Import Chart.js and CategoryScale
 import { useEffect, useState } from 'react';
-import { Chart, CategoryScale } from 'chart.js/auto'; // Import Chart.js and CategoryScale
+import './Report.css'; // Import the CSS file for styling
+import Navbar from '../Navbar/Navbar';
 
 function Report() {
   const [reportData, setReportData] = useState(null);
@@ -27,9 +29,18 @@ function Report() {
 
     const sectionScores = reportData.sectionScores;
     const sectionLabels = Object.keys(sectionScores);
-    const sectionValues = Object.values(sectionScores).map((section) => section.percentage);
+    const sectionValues = Object.values(sectionScores).map(
+      (section) => section.percentage.toFixed(2) // Round percentage to 2 decimal places
+    );
 
-    const ctx = document.getElementById('myChart').getContext('2d'); // Replace with your canvas element ID
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    // Destroy any existing chart before creating a new one
+    const existingChart = Chart.getChart(ctx);
+    if (existingChart) {
+      existingChart.destroy();
+    }
+
     new Chart(ctx, {
       type: 'bar', // Use bar chart for percentage visualization
       data: {
@@ -74,19 +85,42 @@ function Report() {
   }, [reportData]);
 
   return (
-    <div>
-      <h2>Report</h2>
+    <div style={{marginBottom:"3rem"}}>
+    <Navbar />
+      <h2 className='report-header'>Report</h2>
       {reportData ? (
         <>
-          <canvas id="myChart" /> {/* Add a canvas element for the chart */}
-          <ul>
+          <div className='chartContainer'>
+            <canvas id="myChart" /> {/* Add a canvas element for the chart */}
+          </div>
+          <div className="cardContainer">
+            <div className="card">
+              <h3 style={{fontSize:"1.6rem"}}>Total Marks</h3>
+              <p>20</p>
+            </div>
+            <div className="card">
+              <h3 style={{fontSize:"1.6rem"}}>My Score</h3>
+              <p>6</p>
+            </div>
             {Object.entries(reportData.sectionScores).map(([sectionName, sectionData]) => (
-              <li key={sectionName}>
-                <b>{sectionName}:</b> {sectionData.percentage}% correct ({sectionData.correct} out of {sectionData.total})
-                <br />
-                {reportData.recommendations[sectionName]}
-              </li>
+              <div className="card" key={sectionName}>
+                <h3 style={{fontSize:"1.6rem"}} >{sectionName}</h3>
+                <p>{sectionData.percentage.toFixed(2)}%</p> {/* Round percentage to 2 decimal places */}
+              </div>
             ))}
+          </div>
+          <div className='recommendations'>Our recommendations</div>
+          <ul>
+            {Object.entries(reportData.sectionScores).map(
+              ([sectionName, sectionData]) => (
+                <li key={sectionName}>
+                  <b>{sectionName}:</b> {sectionData.percentage.toFixed(2)}% correct (
+                  {sectionData.correct} out of {sectionData.total})
+                  <br />
+                  {reportData.recommendations[sectionName]}
+                </li>
+              )
+            )}
           </ul>
         </>
       ) : (
