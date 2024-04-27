@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllQuiz from './components/AllQuiz/AllQuiz';
+import Course from './components/Course/Course';
 import Landing from './components/Landing/Landing';
 import Model from './components/Model/Model';
 import Quiz from './components/Quiz/Quiz';
@@ -17,6 +18,7 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/model" element={<Model />} />
         <Route path="/report" element={<Report />} />
+        <Route path="/course" element={<Course />} />
       </Routes>
     </BrowserRouter>
   );
