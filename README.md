@@ -66,3 +66,5 @@ Design a future of learning in India, leveraging Industry 4.0, to empower studen
   <blockquote>In the current demographic where people are easily bored and seek engaging and interactive experiences, platforms like EduHub play a crucial role by offering innovative solutions that capture and sustain users' interest. While, traditional education takes help of 2d diagrams to explain concepts, the existence of 3d models provides a much deeper understanding of the same concepts. Essentially, EduHub aims to remove the shackles of traditional education, which existed due to past limitations.</blockquote>
 </details>
 
+
+End of file
